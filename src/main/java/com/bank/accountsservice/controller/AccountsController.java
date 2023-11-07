@@ -12,7 +12,6 @@ import com.bank.accountsservice.model.Customer;
 import com.bank.accountsservice.model.CustomerDetails;
 import com.bank.accountsservice.service.AccountService;
 
-import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.github.resilience4j.retry.annotation.Retry;
 
@@ -60,7 +59,7 @@ public class AccountsController {
 
 
     @GetMapping("/sayHello")
-    @RateLimiter(name = "sayHello", fallbackMethod = "sayHelloFallback")
+    //@RateLimiter(name = "sayHello", fallbackMethod = "sayHelloFallback")
     public String sayHello() {
         return "Hello, Welcome to Bank Application";
     }
